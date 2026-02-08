@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Trapos</title>
+  <style>
+    body {
+      background: #111;
+      color: white;
+      text-align: center;
+      font-family: Arial;
+    }
+    img {
+      width: 250px;
+      margin: 10px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Bienvenido</h1>
+<p>Tu IP es:</p>
+<h2 id="ip">Cargando...</h2>
+
+<img src="foto1.jpg">
+<img src="foto2.jpg">
+
+<script>
+fetch("https://api.ipify.org?format=json")
+  .then(r => r.json())
+  .then(d => document.getElementById("ip").innerText = d.ip);
+</script>
+
+</body>
+</html>
